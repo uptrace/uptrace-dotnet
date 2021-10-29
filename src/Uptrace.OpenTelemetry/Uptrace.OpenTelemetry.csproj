@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <PackageId>Uptrace.OpenTelemetry</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>vmihailenco</Authors>
+    <Company>Uptrace</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.1.0" />
+  </ItemGroup>
+
+</Project>

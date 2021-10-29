@@ -1,0 +1,3 @@
+<Project>
+  <Import Project=".\Common.props" />
+</Project>
