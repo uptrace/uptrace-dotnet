@@ -1,5 +1,7 @@
 # Uptrace for .NET
 
+[![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://docs.uptrace.dev/guide/dotnet.html)
+
 <a href="https://docs.uptrace.dev/guide/dotnet.html">
   <img src="https://docs.uptrace.dev/devicon/dot-net-original.svg" height="200px" />
 </a>
