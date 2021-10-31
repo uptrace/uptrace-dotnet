@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using OpenTelemetry;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
-
 using Uptrace.OpenTelemetry;
 
 namespace Example.Basic
@@ -22,6 +21,8 @@ namespace Example.Basic
                         .AddEnvironmentVariableDetector()
                         .AddService("myservice")
                 )
+                // copy your project DSN here or use UPTRACE_DSN env var
+                //.AddUptrace("https://<token>@api.uptrace.dev/<project_id>")
                 .AddUptrace()
                 .Build();
 
