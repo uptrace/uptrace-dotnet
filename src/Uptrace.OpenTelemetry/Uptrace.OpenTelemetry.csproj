@@ -8,6 +8,7 @@
     <Version>0.1.0</Version>
     <Authors>vmihailenco</Authors>
     <Company>Uptrace</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
