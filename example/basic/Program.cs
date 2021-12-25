@@ -19,6 +19,7 @@ namespace Example.Basic
                     ResourceBuilder
                         .CreateDefault()
                         .AddEnvironmentVariableDetector()
+                        .AddTelemetrySdk()
                         .AddService("myservice")
                 )
                 // copy your project DSN here or use UPTRACE_DSN env var
@@ -65,7 +66,7 @@ namespace Example.Basic
 
                 Console.WriteLine(
                     string.Format(
-                        "https://uptrace.dev/traces/{0}",
+                        "https://app.uptrace.dev/traces/{0}",
                         Activity.Current.Context.TraceId
                     )
                 );

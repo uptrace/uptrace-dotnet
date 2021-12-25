@@ -44,7 +44,7 @@ namespace Uptrace.OpenTelemetry
                 .AddOtlpExporter(
                     opt =>
                     {
-                        opt.Endpoint = new Uri("https://otlp.uptrace.dev:4317");
+                        opt.Endpoint = opts.OtlpEndpoint;
                         opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
                     }
                 )

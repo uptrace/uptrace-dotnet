@@ -42,7 +42,7 @@ namespace Example.Redis
 
                 Console.WriteLine(
                     string.Format(
-                        "https://uptrace.dev/traces/{0}",
+                        "https://app.uptrace.dev/traces/{0}",
                         Activity.Current.Context.TraceId
                     )
                 );
