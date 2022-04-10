@@ -13,6 +13,9 @@ namespace Example.Basic
     {
         static void Main(string[] args)
         {
+            var serviceName = "myservice";
+            var serviceVersion = "1.0.0";
+
             using var openTelemetry = Sdk.CreateTracerProviderBuilder()
                 .AddSource("*") // subscribe to all activity sources
                 .SetResourceBuilder(
@@ -20,7 +23,7 @@ namespace Example.Basic
                         .CreateDefault()
                         .AddEnvironmentVariableDetector()
                         .AddTelemetrySdk()
-                        .AddService("myservice")
+                        .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
                 )
                 // copy your project DSN here or use UPTRACE_DSN env var
                 //.AddUptrace("https://<token>@api.uptrace.dev/<project_id>")
