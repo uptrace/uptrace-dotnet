@@ -1,3 +1,12 @@
+# [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.1...v) (2022-04-10)
+
+
+### Features
+
+* update to rc4 (solves issues with logging 6.0.x) ([#4](https://github.com/uptrace/uptrace-dotnet/issues/4)) ([e86ca77](https://github.com/uptrace/uptrace-dotnet/commit/e86ca7765832e124aa12ce329e1c194cfac7be8c))
+
+
+
 # [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.0...v) (2021-12-25)
 
 
