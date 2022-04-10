@@ -5,14 +5,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <PackageId>Uptrace.OpenTelemetry</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1-rc1</Version>
     <Authors>vmihailenco</Authors>
     <Company>Uptrace</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.1.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.2.0-rc4" />
   </ItemGroup>
 
 </Project>
