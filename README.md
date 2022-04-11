@@ -68,6 +68,7 @@ using Uptrace.OpenTelemetry;
 
 var meterProvider = Sdk.CreateMeterProviderBuilder()
     .AddMeter("MyMeter") // subscribe to all the meters you want
+    //.AddMeter("System.Runtime") // see https://docs.microsoft.com/en-us/dotnet/core/diagnostics/available-counters for more
     .SetResourceBuilder(
         ResourceBuilder
             .CreateDefault()
