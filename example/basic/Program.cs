@@ -16,7 +16,7 @@ namespace Example.Basic
             var serviceName = "myservice";
             var serviceVersion = "1.0.0";
 
-            using var openTelemetry = Sdk.CreateTracerProviderBuilder()
+            using var tracerProvider = Sdk.CreateTracerProviderBuilder()
                 .AddSource("*") // subscribe to all activity sources
                 .SetResourceBuilder(
                     ResourceBuilder

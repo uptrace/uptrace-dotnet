@@ -42,3 +42,8 @@ Adding a new project to the solution:
 dotnet new console --name Example.Otlp --output example/otlp
 dotnet sln add ./example/otlp/Example.Otlp.csproj
 ```
+
+## Logging and self-diagnostics
+
+To enable logging and self-diagnostics, see
+https://github.com/open-telemetry/opentelemetry-dotnet/tree/main/src/OpenTelemetry#troubleshooting
