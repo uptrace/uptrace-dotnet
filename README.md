@@ -19,7 +19,7 @@ Install uptrace-dotnet:
 dotnet add package Uptrace.OpenTelemetry
 ```
 
-## Usage
+## Usage Tracer
 
 You can configure Uptrace client using a DSN (Data Source Name, e.g.
 `https://<token>@api.uptrace.dev/<project_id>`) from the project settings page.
@@ -49,6 +49,37 @@ var openTelemetry = Sdk.CreateTracerProviderBuilder()
 ```
 
 Run the [basic example](example/basic) to try OpenTelemetry and Uptrace.
+
+
+## Usage Meter
+
+You can configure Uptrace client using a DSN (Data Source Name, e.g.
+`https://<token>@api.uptrace.dev/<project_id>`) from the project settings page.
+
+```cs
+using System;
+using System.Diagnostics;
+
+using OpenTelemetry;
+using OpenTelemetry.Trace;
+using OpenTelemetry.Resources;
+
+using Uptrace.OpenTelemetry;
+
+var meterProvider = Sdk.CreateMeterProviderBuilder()
+    .AddMeter("MyMeter") // subscribe to all the meters you want
+    //.AddMeter("System.Runtime") // see https://docs.microsoft.com/en-us/dotnet/core/diagnostics/available-counters for more
+    .SetResourceBuilder(
+        ResourceBuilder
+            .CreateDefault()
+            .AddEnvironmentVariableDetector()
+            .AddService("myservice")
+    )
+    // copy your project DSN here or use UPTRACE_DSN env var
+    .AddUptrace()
+    .Build();
+```
+
 
 ## Links
 
