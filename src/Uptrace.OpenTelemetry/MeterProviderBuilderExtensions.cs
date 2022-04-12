@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
@@ -17,14 +17,11 @@ namespace Uptrace.OpenTelemetry
             var opts = new UptraceOptions();
             return builder.AddUptrace(opts);
         }
-        
+
         /// <summary>
         /// Configures the <see cref="MeterProviderBuilder"/> to send telemetry data to Uptrace
         /// </summary>
-        public static MeterProviderBuilder AddUptrace(
-            this MeterProviderBuilder builder,
-            string dsn
-        )
+        public static MeterProviderBuilder AddUptrace(this MeterProviderBuilder builder, string dsn)
         {
             var opts = new UptraceOptions(dsn);
             return builder.AddUptrace(opts);
@@ -41,14 +38,14 @@ namespace Uptrace.OpenTelemetry
             if (string.IsNullOrWhiteSpace(opts.Dsn))
                 throw new ArgumentException("Uptrace DSN cannot be empty");
 
-            builder
-                .AddOtlpExporter(
-                    opt =>
-                    {
-                        opt.Endpoint = opts.OtlpEndpoint;
-                        opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
-                    }
-                );
+            builder.AddOtlpExporter(
+                (exporterOptions, metricReaderOptions) =>
+                {
+                    exporterOptions.Endpoint = opts.OtlpEndpoint;
+                    exporterOptions.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
+                    metricReaderOptions.Temporality = AggregationTemporality.Delta;
+                }
+            );
 
             return builder;
         }

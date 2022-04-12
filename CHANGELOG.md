@@ -1,3 +1,12 @@
+# [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.2...v) (2022-04-12)
+
+
+### Features
+
+* add Metrics extension methods ([#5](https://github.com/uptrace/uptrace-dotnet/issues/5)) ([9f76392](https://github.com/uptrace/uptrace-dotnet/commit/9f763929fb9d5679273f7e32366b3aed5efe80c4))
+
+
+
 # [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.1...v) (2022-04-10)
 
 
