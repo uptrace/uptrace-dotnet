@@ -1,3 +1,12 @@
+# [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.3...v) (2022-04-18)
+
+
+### Bug Fixes
+
+* fix build ([3afb61a](https://github.com/uptrace/uptrace-dotnet/commit/3afb61ae37bc98cb6564ca8a5eea3dc111a68279))
+
+
+
 # [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.2...v) (2022-04-12)
 
 
