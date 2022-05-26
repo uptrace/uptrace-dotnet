@@ -1,3 +1,12 @@
+## [0.1.5](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.4...v0.1.5) (2022-05-26)
+
+
+### Features
+
+* add logs ([c4a0e6b](https://github.com/uptrace/uptrace-dotnet/commit/c4a0e6baebd1da37a5838f18aa36918a621311f3))
+
+
+
 # [](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.3...v) (2022-04-18)
 
 
