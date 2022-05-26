@@ -68,6 +68,13 @@ namespace Example.Logs
             {
                 var logger = loggerFactory.CreateLogger<Program>();
                 logger.LogInformation("Hello from {name} {price}.", "tomato", 2.99);
+
+                Console.WriteLine(
+                    string.Format(
+                        "https://app.uptrace.dev/traces/{0}",
+                        Activity.Current.Context.TraceId
+                    )
+                );
             }
         }
     }
