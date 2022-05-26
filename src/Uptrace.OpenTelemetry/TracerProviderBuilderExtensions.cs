@@ -38,7 +38,9 @@ namespace Uptrace.OpenTelemetry
         )
         {
             if (string.IsNullOrWhiteSpace(opts.Dsn))
-                throw new ArgumentException("Uptrace DSN cannot be empty");
+                throw new ArgumentException(
+                    "Uptrace DSN cannot be empty (set UPTRACE_DSN env var)"
+                );
 
             builder
                 .AddOtlpExporter(

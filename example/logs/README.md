@@ -1,11 +1,9 @@
-# Basic example for uptrace-dotnet
+# Logs example for OpenTelemetry .NET
 
 To run this example:
 
 ```go
 $ UPTRACE_DSN=https://<token>@uptrace.dev/<project_id> dotnet run
-
-https://app.uptrace.dev/traces/<trace_id>
 ```
 
 Then follow the URL to view the trace.

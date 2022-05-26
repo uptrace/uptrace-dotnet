@@ -26,7 +26,7 @@ namespace Example.Basic
                         .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
                 )
                 // copy your project DSN here or use UPTRACE_DSN env var
-                //.AddUptrace("https://<token>@api.uptrace.dev/<project_id>")
+                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
                 .AddUptrace()
                 .Build();
 

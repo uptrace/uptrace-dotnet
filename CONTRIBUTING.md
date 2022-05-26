@@ -43,6 +43,12 @@ dotnet new console --name Example.Otlp --output example/otlp
 dotnet sln add ./example/otlp/Example.Otlp.csproj
 ```
 
+## Adding a package
+
+```shell
+dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs
+```
+
 ## Logging and self-diagnostics
 
 To enable logging and self-diagnostics, see
