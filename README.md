@@ -1,6 +1,7 @@
 # Uptrace for .NET
 
 [![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://docs.uptrace.dev/guide/dotnet.html)
+[![Chat](https://img.shields.io/matrix/uptrace:matrix.org)](https://matrix.to/#/#uptrace:matrix.org)
 
 <a href="https://docs.uptrace.dev/guide/dotnet.html">
   <img src="https://docs.uptrace.dev/devicon/dot-net-original.svg" height="200px" />
