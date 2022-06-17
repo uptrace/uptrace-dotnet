@@ -68,6 +68,7 @@ namespace Example.Logs
             {
                 var logger = loggerFactory.CreateLogger<Program>();
                 logger.LogInformation("Hello from {name} {price}.", "tomato", 2.99);
+                logger.LogError("This is an error");
 
                 Console.WriteLine(
                     string.Format(
