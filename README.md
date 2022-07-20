@@ -1,16 +1,17 @@
 # Uptrace for .NET
 
-[![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://docs.uptrace.dev/guide/dotnet.html)
+[![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://uptrace.dev/docs/dotnet.html)
 [![Chat](https://img.shields.io/matrix/uptrace:matrix.org)](https://matrix.to/#/#uptrace:matrix.org)
 
-<a href="https://docs.uptrace.dev/guide/dotnet.html">
-  <img src="https://docs.uptrace.dev/devicon/dot-net-original.svg" height="200px" />
+<a href="https://uptrace.dev/docs/dotnet.html">
+  <img src="https://uptrace.dev/docs/devicon/dot-net-original.svg" height="200px" />
 </a>
 
 ## Introduction
 
 uptrace-dotnet is an OpenTelemery distribution configured to export
-[traces](https://opentelemetry.uptrace.dev/guide/distributed-tracing.html) to Uptrace.
+[traces](https://uptrace.dev/opentelemetry/distributed-tracing.html) and
+[metrics](https://uptrace.dev/opentelemetry/metrics.html) to Uptrace.
 
 ## Installation
 
@@ -107,5 +108,5 @@ using var meterProvider = Sdk.CreateMeterProviderBuilder()
 ## Links
 
 - [Examples](example)
-- [Documentation](https://docs.uptrace.dev/guide/dotnet.html)
-- [.NET instrumentations](https://opentelemetry.uptrace.dev/instrumentations.html?lang=dotnet)
+- [Documentation](https://uptrace.dev/docs/dotnet.html)
+- [.NET instrumentations](https://uptrace.dev/opentelemetry/instrumentations/?lang=dotnet)
