@@ -25,9 +25,10 @@ namespace Example.Redis
                         .AddService("myservice")
                 )
                 .AddRedisInstrumentation(redis)
-                // copy your project DSN here or use UPTRACE_DSN env var
-                //.AddUptrace("https://<token>@api.uptrace.dev/<project_id>")
-                .AddUptrace()
+                // use UPTRACE_DSN env var
+                .AddUptrace() // use UPTRACE_DSN env var
+                // or pass DSN explicitly
+                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
                 .Build();
 
             using var source = new ActivitySource("app_or_lib_name");

@@ -31,7 +31,10 @@ namespace Example.Metrics
                         .AddTelemetrySdk()
                         .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
                 )
-                .AddUptrace()
+                // use UPTRACE_DSN env var
+                .AddUptrace() // use UPTRACE_DSN env var
+                // or pass DSN explicitly
+                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
                 .Build();
 
             var counter = meter.CreateCounter<int>("counter", "things", "A count of things");

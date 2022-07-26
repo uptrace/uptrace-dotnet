@@ -25,9 +25,10 @@ namespace Example.Basic
                         .AddTelemetrySdk()
                         .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
                 )
-                // copy your project DSN here or use UPTRACE_DSN env var
+                // use UPTRACE_DSN env var
+                .AddUptrace() // use UPTRACE_DSN env var
+                // or pass DSN explicitly
                 //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
-                .AddUptrace()
                 .Build();
 
             using var source = new ActivitySource("app_or_lib_name");
