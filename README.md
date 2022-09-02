@@ -1,10 +1,10 @@
 # Uptrace for .NET
 
-[![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://uptrace.dev/docs/dotnet.html)
-[![Chat](https://discordapp.com/api/guilds/1000404569202884628/widget.png)](https://discord.gg/YF8tdP8Pmk)
+[![Documentation](https://img.shields.io/badge/uptrace-documentation-informational)](https://uptrace.dev/get/uptrace-dotnet.html)
+[![Chat](https://img.shields.io/badge/-telegram-red?color=white&logo=telegram&logoColor=black)](https://t.me/uptrace)
 
-<a href="https://uptrace.dev/docs/dotnet.html">
-  <img src="https://uptrace.dev/docs/devicon/dot-net-original.svg" height="200px" />
+<a href="https://uptrace.dev/get/uptrace-dotnet.html">
+  <img src="https://uptrace.dev/get/devicon/dot-net-original.svg" height="200px" />
 </a>
 
 ## Introduction
@@ -108,5 +108,5 @@ using var meterProvider = Sdk.CreateMeterProviderBuilder()
 ## Links
 
 - [Examples](example)
-- [Documentation](https://uptrace.dev/docs/dotnet.html)
+- [Documentation](https://uptrace.dev/get/uptrace-dotnet.html)
 - [.NET instrumentations](https://uptrace.dev/opentelemetry/instrumentations/?lang=dotnet)
