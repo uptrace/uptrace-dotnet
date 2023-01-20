@@ -1,3 +1,7 @@
+## [0.1.7](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.6...v0.1.7) (2023-01-20)
+
+
+
 ## [0.1.6](https://github.com/uptrace/uptrace-dotnet/compare/v0.1.5...v0.1.6) (2022-06-17)
 
 
