@@ -50,7 +50,8 @@ namespace Uptrace.OpenTelemetry
                         opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
                     }
                 )
-                .AddProcessor(new BaggageSpanProcessor());
+                .AddProcessor(new BaggageSpanProcessor())
+                .AddXRayTraceId();
 
             return builder;
         }
