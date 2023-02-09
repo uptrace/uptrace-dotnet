@@ -22,7 +22,7 @@ namespace Example.Metrics
             using var meter = new Meter("TestMeter");
 
             using var meterProvider = Sdk.CreateMeterProviderBuilder()
-                .AddRuntimeMetrics()
+                .AddRuntimeInstrumentation()
                 .AddMeter("*")
                 .SetResourceBuilder(
                     ResourceBuilder
