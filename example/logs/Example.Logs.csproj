@@ -8,7 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="$(RepoRoot)/src/Uptrace.OpenTelemetry/Uptrace.OpenTelemetry.csproj" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.4.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.6.0" />
   </ItemGroup>
 
 </Project>

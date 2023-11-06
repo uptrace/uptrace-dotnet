@@ -1,6 +1,8 @@
 ﻿using System;
 
+using OpenTelemetry;
 using OpenTelemetry.Logs;
+using OpenTelemetry.Exporter;
 
 namespace Uptrace.OpenTelemetry
 {
@@ -45,13 +47,15 @@ namespace Uptrace.OpenTelemetry
                     "Uptrace DSN cannot be empty (set UPTRACE_DSN env var)"
                 );
 
-            loggerOptions.AddOtlpExporter(
-                opt =>
-                {
-                    opt.Endpoint = opts.OtlpEndpoint;
-                    opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
-                }
-            );
+            loggerOptions.AddOtlpExporter((exporterOptions, processorOptions) =>
+            {
+                exporterOptions.Protocol = OtlpExportProtocol.Grpc;
+                exporterOptions.Endpoint = opts.OtlpGrpcEndpoint;
+                exporterOptions.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
+
+                processorOptions.ExportProcessorType = ExportProcessorType.Batch;
+                processorOptions.BatchExportProcessorOptions = new BatchExportLogRecordProcessorOptions();
+            });
 
             return loggerOptions;
         }

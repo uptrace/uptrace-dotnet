@@ -28,16 +28,21 @@ namespace Uptrace.OpenTelemetry
             var uri = new Uri(dsn);
             if (uri.Host == "uptrace.dev" || uri.Host == "api.uptrace.dev")
             {
-                this.OtlpEndpoint = new Uri("https://otlp.uptrace.dev:4317");
+                this.OtlpGrpcEndpoint = new Uri("https://otlp.uptrace.dev:4317");
             }
             else
             {
-                this.OtlpEndpoint =
+                var grpcPort = 14317;
+
+                var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+                Int32.TryParse(query["grpc"], out grpcPort);
+
+                this.OtlpGrpcEndpoint =
                     new UriBuilder
                     {
                         Scheme = uri.Scheme,
                         Host = uri.DnsSafeHost,
-                        Port = uri.Port,
+                        Port = grpcPort,
                     }.Uri;
             }
         }
@@ -52,6 +57,6 @@ namespace Uptrace.OpenTelemetry
         /// <summary>
         /// OTLP endpoint for gRPC.
         /// </summary>
-        public Uri OtlpEndpoint { get; set; }
+        public Uri OtlpGrpcEndpoint { get; set; }
     }
 }

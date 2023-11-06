@@ -43,7 +43,7 @@ namespace Uptrace.OpenTelemetry
             builder.AddOtlpExporter(
                 (exporterOptions, metricReaderOptions) =>
                 {
-                    exporterOptions.Endpoint = opts.OtlpEndpoint;
+                    exporterOptions.Endpoint = opts.OtlpGrpcEndpoint;
                     exporterOptions.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
                     metricReaderOptions.TemporalityPreference =
                         MetricReaderTemporalityPreference.Delta;

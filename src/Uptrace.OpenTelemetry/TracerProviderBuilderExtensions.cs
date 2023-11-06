@@ -46,7 +46,7 @@ namespace Uptrace.OpenTelemetry
                 .AddOtlpExporter(
                     opt =>
                     {
-                        opt.Endpoint = opts.OtlpEndpoint;
+                        opt.Endpoint = opts.OtlpGrpcEndpoint;
                         opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
                     }
                 )
