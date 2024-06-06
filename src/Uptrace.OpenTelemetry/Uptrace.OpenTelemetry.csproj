@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <PackageId>Uptrace.OpenTelemetry</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>vmihailenco</Authors>
     <Company>Uptrace</Company>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
