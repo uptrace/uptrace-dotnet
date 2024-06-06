@@ -32,10 +32,12 @@ namespace Uptrace.OpenTelemetry
             }
             else
             {
-                var grpcPort = 14317;
 
                 var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-                Int32.TryParse(query["grpc"], out grpcPort);
+                if (!Int32.TryParse(query["grpc"], out var grpcPort))
+                {
+                    grpcPort = 14317;
+                }
 
                 this.OtlpGrpcEndpoint =
                     new UriBuilder
