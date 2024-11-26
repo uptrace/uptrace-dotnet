@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="$(RepoRoot)/src/Uptrace.OpenTelemetry/Uptrace.OpenTelemetry.csproj" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" Version="1.0.0-rc9.9" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" Version="1.0.0-rc9.15" />
   </ItemGroup>
 
 </Project>
