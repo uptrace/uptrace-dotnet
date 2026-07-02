@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Diagnostics; //
 using System.Collections.Generic; //
-
+using System.Diagnostics; //
 using Microsoft.Extensions.Logging;
-
 using OpenTelemetry; //
-using OpenTelemetry.Trace; //
 using OpenTelemetry.Logs;
 using OpenTelemetry.Resources;
+using OpenTelemetry.Trace; //
 using Uptrace.OpenTelemetry; //
 
 namespace Example.Logs
@@ -32,37 +30,33 @@ namespace Example.Logs
                 // use UPTRACE_DSN env var
                 .AddUptrace() // use UPTRACE_DSN env var
                 // or pass DSN explicitly
-                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
+                //.AddUptrace("https://<secret>@api.uptrace.dev?grpc=4317")
                 .Build();
             using var source = new ActivitySource("app_or_lib_name");
 
             // Secondly, let's configure logging.
-            using var loggerFactory = LoggerFactory.Create(
-                builder =>
+            using var loggerFactory = LoggerFactory.Create(builder =>
+            {
+                builder.AddOpenTelemetry(options =>
                 {
-                    builder.AddOpenTelemetry(
-                        options =>
-                        {
-                            options.IncludeScopes = true;
-                            options.ParseStateValues = true;
-                            options.IncludeFormattedMessage = true;
-                            options
-                                .SetResourceBuilder(
-                                    ResourceBuilder
-                                        .CreateDefault()
-                                        .AddEnvironmentVariableDetector()
-                                        .AddTelemetrySdk()
-                                        .AddService(
-                                            serviceName: serviceName,
-                                            serviceVersion: serviceVersion
-                                        )
+                    options.IncludeScopes = true;
+                    options.ParseStateValues = true;
+                    options.IncludeFormattedMessage = true;
+                    options
+                        .SetResourceBuilder(
+                            ResourceBuilder
+                                .CreateDefault()
+                                .AddEnvironmentVariableDetector()
+                                .AddTelemetrySdk()
+                                .AddService(
+                                    serviceName: serviceName,
+                                    serviceVersion: serviceVersion
                                 )
-                                .AddConsoleExporter()
-                                .AddUptrace();
-                        }
-                    );
-                }
-            );
+                        )
+                        .AddConsoleExporter()
+                        .AddUptrace();
+                });
+            });
 
             // Lastly, create a trace with some logs.
             using (var main = source.StartActivity("main-operation"))

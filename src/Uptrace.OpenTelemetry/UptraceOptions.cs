@@ -7,6 +7,9 @@ namespace Uptrace.OpenTelemetry
     /// </summary>
     public class UptraceOptions
     {
+        /// <summary>
+        /// Creates options using the DSN from the <c>UPTRACE_DSN</c> environment variable
+        /// </summary>
         public UptraceOptions()
         {
             var dsn = Environment.GetEnvironmentVariable("UPTRACE_DSN");
@@ -16,6 +19,9 @@ namespace Uptrace.OpenTelemetry
             }
         }
 
+        /// <summary>
+        /// Creates options using the provided DSN
+        /// </summary>
         public UptraceOptions(string dsn)
         {
             parseDsn(dsn);
@@ -32,20 +38,18 @@ namespace Uptrace.OpenTelemetry
             }
             else
             {
-
                 var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
                 if (!Int32.TryParse(query["grpc"], out var grpcPort))
                 {
                     grpcPort = 14317;
                 }
 
-                this.OtlpGrpcEndpoint =
-                    new UriBuilder
-                    {
-                        Scheme = uri.Scheme,
-                        Host = uri.DnsSafeHost,
-                        Port = grpcPort,
-                    }.Uri;
+                this.OtlpGrpcEndpoint = new UriBuilder
+                {
+                    Scheme = uri.Scheme,
+                    Host = uri.DnsSafeHost,
+                    Port = grpcPort,
+                }.Uri;
             }
         }
 

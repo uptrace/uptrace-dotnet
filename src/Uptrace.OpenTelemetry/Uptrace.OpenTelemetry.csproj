@@ -1,19 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <PackageId>Uptrace.OpenTelemetry</PackageId>
     <Version>0.2.2</Version>
     <Authors>vmihailenco</Authors>
     <Company>Uptrace</Company>
+    <Description>OpenTelemetry distribution that exports traces, metrics, and logs to Uptrace using OTLP/gRPC.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://uptrace.dev/get/opentelemetry-dotnet</PackageProjectUrl>
+    <PackageTags>uptrace;opentelemetry;otlp;tracing;metrics;logs;observability;apm</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/uptrace/uptrace-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenTelemetry.Contrib.Extensions.AWSXRay" Version="1.2.0" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.10.0" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Extensions.AWS" Version="1.16.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.16.0" />
+  </ItemGroup>
 </Project>

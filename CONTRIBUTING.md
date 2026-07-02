@@ -1,6 +1,18 @@
 # Contributing
 
-## Code formatting with csharpier
+## Building
+
+```shell
+dotnet build uptrace.sln
+```
+
+Release builds treat warnings as errors:
+
+```shell
+dotnet build -c Release uptrace.sln
+```
+
+## Code formatting with CSharpier
 
 Install:
 
@@ -11,22 +23,14 @@ dotnet tool install -g csharpier
 Use:
 
 ```shell
-dotnet csharpier .
+dotnet csharpier format .
 ```
 
-## Code formatting with dotnet-format
+## Commit messages
 
-Install:
-
-```shell
-dotnet tool install -g dotnet-format
-```
-
-Use:
-
-```shell
-dotnet format
-```
+Pull request commits are checked with [commitlint](https://commitlint.js.org/) and must follow the
+[Conventional Commits](https://www.conventionalcommits.org/) format, e.g. `feat: add logs support`
+or `chore: bump dependencies`.
 
 ## Creating a solution
 
@@ -46,7 +50,7 @@ dotnet sln add ./example/otlp/Example.Otlp.csproj
 ## Adding a package
 
 ```shell
-dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol.Logs
+dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
 ```
 
 ## Logging and self-diagnostics

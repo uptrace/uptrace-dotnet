@@ -3,4 +3,4 @@ all: fmt
 	dotnet build uptrace.sln
 
 fmt:
-	dotnet csharpier .
+	dotnet csharpier format .

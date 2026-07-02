@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Threading.Tasks;
-
 using OpenTelemetry;
+using OpenTelemetry.Exporter;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
-using OpenTelemetry.Exporter;
 
-namespace Example.Metrics
+namespace Example.MetricsOtlp
 {
     class Program
     {
@@ -30,15 +29,13 @@ namespace Example.Metrics
                         .AddTelemetrySdk()
                         .AddService(serviceName: serviceName, serviceVersion: serviceVersion)
                 )
-                .AddOtlpExporter(
-                    opt =>
-                    {
-                        var dsn = Environment.GetEnvironmentVariable("UPTRACE_DSN");
-                        opt.Protocol = OtlpExportProtocol.Grpc;
-                        opt.Endpoint = new Uri("https://otlp.uptrace.dev:4317");
-                        opt.Headers = string.Format("uptrace-dsn={0}", dsn);
-                    }
-                )
+                .AddOtlpExporter(opt =>
+                {
+                    var dsn = Environment.GetEnvironmentVariable("UPTRACE_DSN");
+                    opt.Protocol = OtlpExportProtocol.Grpc;
+                    opt.Endpoint = new Uri("https://otlp.uptrace.dev:4317");
+                    opt.Headers = string.Format("uptrace-dsn={0}", dsn);
+                })
                 .Build();
 
             var counter = meter.CreateCounter<int>("counter", "things", "A count of things");

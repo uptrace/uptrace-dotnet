@@ -43,13 +43,11 @@ namespace Uptrace.OpenTelemetry
                 );
 
             builder
-                .AddOtlpExporter(
-                    opt =>
-                    {
-                        opt.Endpoint = opts.OtlpGrpcEndpoint;
-                        opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
-                    }
-                )
+                .AddOtlpExporter(opt =>
+                {
+                    opt.Endpoint = opts.OtlpGrpcEndpoint;
+                    opt.Headers = string.Format("uptrace-dsn={0}", opts.Dsn);
+                })
                 .AddProcessor(new BaggageSpanProcessor())
                 .AddXRayTraceId();
 

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
 using System.Threading.Tasks;
-
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
-
 using Uptrace.OpenTelemetry;
 
 namespace Example.Metrics
@@ -34,7 +32,7 @@ namespace Example.Metrics
                 // use UPTRACE_DSN env var
                 .AddUptrace() // use UPTRACE_DSN env var
                 // or pass DSN explicitly
-                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
+                //.AddUptrace("https://<secret>@api.uptrace.dev?grpc=4317")
                 .Build();
 
             var counter = meter.CreateCounter<int>("counter", "things", "A count of things");

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
-
 using OpenTelemetry;
-using OpenTelemetry.Trace;
 using OpenTelemetry.Resources;
-using Uptrace.OpenTelemetry;
+using OpenTelemetry.Trace;
 using StackExchange.Redis;
+using Uptrace.OpenTelemetry;
 
 namespace Example.Redis
 {
@@ -28,7 +27,7 @@ namespace Example.Redis
                 // use UPTRACE_DSN env var
                 .AddUptrace() // use UPTRACE_DSN env var
                 // or pass DSN explicitly
-                //.AddUptrace("https://<token>@uptrace.dev/<project_id>")
+                //.AddUptrace("https://<secret>@api.uptrace.dev?grpc=4317")
                 .Build();
 
             using var source = new ActivitySource("app_or_lib_name");
