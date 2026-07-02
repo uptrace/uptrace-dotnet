@@ -44,10 +44,8 @@ when behavior changes, by running an example with a real DSN:
 ## Releasing
 
 Maintainer-driven; agents should not bump versions or tag unless asked.
-The flow: bump `<Version>` in `src/Uptrace.OpenTelemetry/Uptrace.OpenTelemetry.csproj`,
-update `CHANGELOG.md` (conventional-changelog format), commit
-`chore: release vX.Y.Z`, and push a `vX.Y.Z` tag — the `release.yml` workflow
-creates the GitHub release. Publishing to NuGet happens outside this repo's CI.
+See "Releasing a new version" in [CONTRIBUTING.md](CONTRIBUTING.md) for the
+step-by-step flow (version bump, changelog, `vX.Y.Z` tag, NuGet push).
 
 ## Gotchas
 

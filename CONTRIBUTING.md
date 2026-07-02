@@ -53,6 +53,40 @@ dotnet sln add ./example/otlp/Example.Otlp.csproj
 dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
 ```
 
+## Releasing a new version
+
+1. Bump `<Version>` in `src/Uptrace.OpenTelemetry/Uptrace.OpenTelemetry.csproj`.
+
+2. Update `CHANGELOG.md` using [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog):
+
+   ```shell
+   npx conventional-changelog-cli -p angular -i CHANGELOG.md -s
+   ```
+
+3. Commit and push the release commit together with a `vX.Y.Z` tag:
+
+   ```shell
+   git add -A
+   git commit -m "chore: release vX.Y.Z"
+   git tag vX.Y.Z
+   git push origin master vX.Y.Z
+   ```
+
+   Pushing the tag triggers `.github/workflows/release.yml`, which creates the GitHub release.
+
+4. Pack and publish the package to NuGet (building in Release also packs it, thanks to
+   `GeneratePackageOnBuild`):
+
+   ```shell
+   dotnet build -c Release uptrace.sln
+   dotnet nuget push src/Uptrace.OpenTelemetry/bin/Release/Uptrace.OpenTelemetry.X.Y.Z.nupkg \
+     --source https://api.nuget.org/v3/index.json \
+     --api-key <your-nuget-api-key>
+   ```
+
+5. Check that the new version appears on
+   [nuget.org/packages/Uptrace.OpenTelemetry](https://www.nuget.org/packages/Uptrace.OpenTelemetry).
+
 ## Logging and self-diagnostics
 
 To enable logging and self-diagnostics, see
