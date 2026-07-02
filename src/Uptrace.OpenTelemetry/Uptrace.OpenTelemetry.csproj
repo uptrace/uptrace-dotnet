@@ -5,7 +5,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <PackageId>Uptrace.OpenTelemetry</PackageId>
-    <Version>0.2.2</Version>
+    <Version>0.3.0</Version>
     <Authors>vmihailenco</Authors>
     <Company>Uptrace</Company>
     <Description>OpenTelemetry distribution that exports traces, metrics, and logs to Uptrace using OTLP/gRPC.</Description>
