@@ -72,19 +72,13 @@ dotnet add package OpenTelemetry.Exporter.OpenTelemetryProtocol
    git push origin master vX.Y.Z
    ```
 
-   Pushing the tag triggers `.github/workflows/release.yml`, which creates the GitHub release.
+   Pushing the tag triggers `.github/workflows/release.yml`, which verifies that the tag matches
+   `<Version>` in the csproj, packs the library, publishes it to nuget.org, and creates the GitHub
+   release. Publishing requires the `NUGET_API_KEY` repository secret (Settings → Secrets and
+   variables → Actions) containing a nuget.org API key with push permission for
+   `Uptrace.OpenTelemetry`.
 
-4. Pack and publish the package to NuGet (building in Release also packs it, thanks to
-   `GeneratePackageOnBuild`):
-
-   ```shell
-   dotnet build -c Release uptrace.sln
-   dotnet nuget push src/Uptrace.OpenTelemetry/bin/Release/Uptrace.OpenTelemetry.X.Y.Z.nupkg \
-     --source https://api.nuget.org/v3/index.json \
-     --api-key <your-nuget-api-key>
-   ```
-
-5. Check that the new version appears on
+4. Check that the new version appears on
    [nuget.org/packages/Uptrace.OpenTelemetry](https://www.nuget.org/packages/Uptrace.OpenTelemetry).
 
 ## Logging and self-diagnostics
